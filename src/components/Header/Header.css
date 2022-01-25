@@ -1,0 +1,98 @@
+/* Styles for Header: header, h1, button  */
+.header-nav {
+  background-color: rgb(42, 67, 142);
+  width: 100vw;
+  height: 8vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  color: white;
+}
+.header-h1 {
+  width: 50vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 1vw;
+  font-size: 22px;
+}
+.button {
+  background-color: rgb(6, 23, 55, 0.9);
+  width: 25vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: none;
+  margin-right: 1vw;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.button:hover,
+.button:active {
+  background-color: rgb(6, 23, 55);
+}
+.icon {
+  width: 25px;
+  height: 25px;
+}
+.badge {
+  background-color: rgb(57, 100, 233);
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 15px;
+  width: 4vw;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover .badge,
+.button:active .badge {
+  background-color: black;
+}
+
+/* Styles for image in header */
+.image-box {
+  width: 100vw;
+  height: 42vh;
+}
+
+.image-box img {
+  width: 100vw;
+  height: 42vh;
+  object-fit: cover;
+  position: fixed;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+  .header-h1 {
+    width: 30vw;
+    margin-left: 2vw;
+    font-size: 16px;
+  }
+  .button {
+    width: 50vw;
+    height: 6vh;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .badge {
+    font-size: 12px;
+    border-radius: 10px;
+    width: 6vw;
+    height: 3vh;
+  }
+  .cart-title {
+    font-size: 12px;
+  }
+}
