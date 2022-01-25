@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/fooder-app/static/css/main.073c9b0a.css",
-    "main.js": "/fooder-app/static/js/main.669bf3e2.js",
-    "static/js/787.dd29f465.chunk.js": "/fooder-app/static/js/787.dd29f465.chunk.js",
-    "static/media/logo.svg": "/fooder-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/fooder-app/static/css/main.dca8e411.css",
+    "main.js": "/fooder-app/static/js/main.9f7dea96.js",
+    "static/media/food.jpg": "/fooder-app/static/media/food.95a82f4f4ea6ed1d34c0.jpg",
     "index.html": "/fooder-app/index.html",
-    "main.073c9b0a.css.map": "/fooder-app/static/css/main.073c9b0a.css.map",
-    "main.669bf3e2.js.map": "/fooder-app/static/js/main.669bf3e2.js.map",
-    "787.dd29f465.chunk.js.map": "/fooder-app/static/js/787.dd29f465.chunk.js.map"
+    "main.dca8e411.css.map": "/fooder-app/static/css/main.dca8e411.css.map",
+    "main.9f7dea96.js.map": "/fooder-app/static/js/main.9f7dea96.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.669bf3e2.js"
+    "static/css/main.dca8e411.css",
+    "static/js/main.9f7dea96.js"
   ]
 }
