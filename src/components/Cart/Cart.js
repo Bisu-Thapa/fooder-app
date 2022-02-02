@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Cart.css";
 import Modal from "./Modal";
 import CartContext from "../Context/cartContext";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 
 const Cart = (props) => {
+  // useState
+  const [isCheckout, setIsCheckout] = useState(false);
+
   // used useContext
   const cartContext = useContext(CartContext);
 
@@ -21,6 +25,12 @@ const Cart = (props) => {
   const cartItemAddHandler = (item) => {
     cartContext.addItem({ ...item, amount: 1 });
   };
+
+  // Order handler
+  const orderHandler = () => {
+    setIsCheckout(true);
+  };
+
   const cartItems = cartContext.items.map((item) => (
     <CartItem
       key={item.id}
@@ -31,19 +41,31 @@ const Cart = (props) => {
       onAdd={cartItemAddHandler.bind(null, item)}
     />
   ));
+
+  const modalActions = (
+    <div className="actions-box">
+      {cartHasItems && (
+        <button className="order" onClick={orderHandler}>
+          Order
+        </button>
+      )}
+      <button className="cancel" onClick={props.onCancel}>
+        Cancel
+      </button>
+    </div>
+  );
+
   // rendering
   return (
     <Modal>
-      <ol className="ol">{cartItems}</ol>
+      <div className="cartItem-container">{cartItems}</div>
       <h3 className="total-amount">
-        Total amount: <p className="totalAmount">{totalAmount}</p>
+        Total amount:{" "}
+        <p style={{ color: "maroon", marginLeft: "5px"}}> {totalAmount}</p>
       </h3>
-      <div className="button-box">
-        {cartHasItems && <button className="order">Order</button>}
-        <button className="cancel" onClick={props.onCancel}>
-          Cancel
-        </button>
-      </div>
+
+      {isCheckout && <Checkout onCancel={props.onCancel} />}
+      <div className="button-box">{!isCheckout && modalActions}</div>
     </Modal>
   );
 };

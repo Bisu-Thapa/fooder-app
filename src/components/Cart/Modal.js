@@ -15,7 +15,9 @@ const Backdrop = (props) => {
 const ModalOverlay = (props) => {
   return (
     <div className="overlay">
-      <div className="overlay-items">{props.children}</div>
+      <div className="overlay-items">
+        <div className="cart-container">{props.children}</div>
+      </div>
     </div>
   );
 };

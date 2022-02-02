@@ -157,3 +157,15 @@
     padding-left: 2vw;
   }
 }
+
+/* Styles for error */
+.loading {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+}
+.menuError {
+  text-align: center;
+  color: red;
+  font-size: 22px;
+}

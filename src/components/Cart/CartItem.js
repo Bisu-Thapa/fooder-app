@@ -4,11 +4,13 @@ import "./Cart.css";
 const CartItem = (props) => {
   const price = `€${props.price.toFixed(2)}`;
   return (
-    <li className="cart-items">
+    <section className="cartItem-list">
       <div className="items-info">
-        <h3>{props.name}</h3>
-        <div className="item-price">
-          <span>{price}</span>
+        <div className="name-price">
+          <p>{props.name}</p>
+          <p style={{color:"maroon"}}>{price}</p>
+        </div>
+        <div className="amount">
           <span>X {props.amount}</span>
         </div>
       </div>
@@ -17,7 +19,7 @@ const CartItem = (props) => {
         <button onClick={props.onRemove}>-</button>
         <button onClick={props.onAdd}>+</button>
       </div>
-    </li>
+    </section>
   );
 };
 
