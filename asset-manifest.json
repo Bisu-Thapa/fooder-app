@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/fooder-app/static/css/main.301ab484.css",
+    "main.css": "/fooder-app/static/css/main.35a77416.css",
     "main.js": "/fooder-app/static/js/main.d8bb2d73.js",
     "static/media/food.jpg": "/fooder-app/static/media/food.95a82f4f4ea6ed1d34c0.jpg",
     "index.html": "/fooder-app/index.html",
-    "main.301ab484.css.map": "/fooder-app/static/css/main.301ab484.css.map",
+    "main.35a77416.css.map": "/fooder-app/static/css/main.35a77416.css.map",
     "main.d8bb2d73.js.map": "/fooder-app/static/js/main.d8bb2d73.js.map"
   },
   "entrypoints": [
-    "static/css/main.301ab484.css",
+    "static/css/main.35a77416.css",
     "static/js/main.d8bb2d73.js"
   ]
 }
