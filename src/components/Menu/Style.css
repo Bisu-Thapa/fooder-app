@@ -93,7 +93,7 @@
   border: none;
   font-weight: bold;
   font-size: 14px;
-  box-shadow: 0px 1px 1px rgb(0, 0, 0, 0.5);
+  border: 1px solid rgb(0, 0, 0, 0.5);
   padding-left: 1vw;
 }
 .form-btn {
@@ -110,6 +110,17 @@
 }
 .form-btn:hover {
   background-color: rgb(7, 45, 160);
+}
+/* Styles for error */
+.loading {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+}
+.menuError {
+  text-align: center;
+  color: red;
+  font-size: 22px;
 }
 
 @media screen and (max-width: 500px) {
@@ -142,8 +153,8 @@
     font-size: 14px;
   }
   .form-btn {
-    width: 12vw;
-    height: 5vh;
+    width: 50px;
+    height: 40px;
     font-size: 12px;
   }
   .form-input {
@@ -151,21 +162,8 @@
     font-size: 12px;
   }
   .form-input input {
-    width: 5vw;
-    height: 4vh;
+    width: 40px;
+    height: 30px;
     font-size: 12px;
-    padding-left: 2vw;
   }
-}
-
-/* Styles for error */
-.loading {
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 22px;
-}
-.menuError {
-  text-align: center;
-  color: red;
-  font-size: 22px;
 }

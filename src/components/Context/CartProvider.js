@@ -57,6 +57,10 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+  // To clear
+  if (action.type === "CLEAR") {
+    return defaultCartState;
+  }
   return defaultCartState;
 };
 
@@ -75,6 +79,9 @@ const CartProvider = (props) => {
   const removeItemFromCartHandler = (id) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR" });
+  };
   // declaring CartContext helper, and this will be the concrete value that we update
   // now using useReducer to update cartContext
   const cartContext = {
@@ -82,6 +89,7 @@ const CartProvider = (props) => {
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearCart: clearCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>

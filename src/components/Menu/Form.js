@@ -26,7 +26,7 @@ const Form = (props) => {
 
   // rendering
   return (
-    <form className="form" onSubmit={submitHandler}>
+    <form className="form" onSubmit={submitHandler}> 
       <div className="form-input">
         <label htmlFor="amount">Amount</label>
         <input

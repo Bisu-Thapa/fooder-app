@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, Fragment } from "react";
 import "./Cart.css";
 import Modal from "./Modal";
 import CartContext from "../Context/cartContext";
@@ -8,6 +8,8 @@ import Checkout from "./Checkout";
 const Cart = (props) => {
   // useState
   const [isCheckout, setIsCheckout] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // used useContext
   const cartContext = useContext(CartContext);
@@ -29,6 +31,25 @@ const Cart = (props) => {
   // Order handler
   const orderHandler = () => {
     setIsCheckout(true);
+  };
+
+  // submit data when order is clicked
+  const submitOrderHandler = async (userData) => {
+    setIsSubmitting(true);
+    // submit data to the backend
+    await fetch(
+      "https://food-order-app-8c46e-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          orderedItems: cartContext.items,
+        }),
+      }
+    );
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    cartContext.clearCart();
   };
 
   const cartItems = cartContext.items.map((item) => (
@@ -55,17 +76,36 @@ const Cart = (props) => {
     </div>
   );
 
-  // rendering
-  return (
-    <Modal>
+  const cartModalContent = (
+    <Fragment>
       <div className="cartItem-container">{cartItems}</div>
       <h3 className="total-amount">
         Total amount:{" "}
-        <p style={{ color: "maroon", marginLeft: "5px"}}> {totalAmount}</p>
+        <p style={{ color: "maroon", marginLeft: "5px" }}> {totalAmount}</p>
       </h3>
 
-      {isCheckout && <Checkout onCancel={props.onCancel} />}
+      {isCheckout && (
+        <Checkout onConfirm={submitOrderHandler} onCancel={props.onCancel} />
+      )}
       <div className="button-box">{!isCheckout && modalActions}</div>
+    </Fragment>
+  );
+
+  const isSubmittingModalContent = <p>Sending order data...</p>;
+  const isSubmittedModalContent = (
+    <Fragment>
+      <p>Your order has been sent. Thank you!</p>
+      <button className="cancel" onClick={props.onCancel}>
+        Close
+      </button>
+    </Fragment>
+  );
+  // rendering
+  return (
+    <Modal onClick={props.onCancel}>
+      {!isSubmitting && !isSubmitted && cartModalContent}
+      {isSubmitting && isSubmittingModalContent}
+      {!isSubmitting && isSubmitted && isSubmittedModalContent}
     </Modal>
   );
 };

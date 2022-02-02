@@ -44,7 +44,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.4);
 }
 .items-info {
   height: 8vh;
@@ -77,7 +77,6 @@
   font-weight: bold;
 }
 .total-amount {
-  background-color: rgb(255, 255, 255);
   width: 50vw;
   height: 5vh;
   display: flex;
@@ -85,6 +84,7 @@
   justify-content: flex-end;
   padding: 0 2% 0 2%;
   font-size: 18px;
+  border-bottom: 2px solid black;
 }
 .form-checkout {
   background-color: rgb(236, 236, 236);
@@ -97,27 +97,39 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
+  overflow: scroll;
 }
 .input-container {
   width: 50vw;
-  height: 4vh;
+  height: 12vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-top: 1vh;
-  font: 16px;
-  font-weight: bold;
+  margin: 1vh 0 1vh 0;
 }
 .input-container input {
   width: 25vw;
   height: 4vh;
 }
+.input-container label {
+  height: 3vh;
+  font-size: 14px;
+  font-weight: bold;
+}
+.input-error {
+  font-size: 10px;
+  color: red;
+  margin: 0;
+  height: 2vh;
+}
 .button-container {
-  width: 30vw;
+  width: 20vw;
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 1vh 0 1vh 0;
 }
 
 /* cart.js buttons */
@@ -142,7 +154,7 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 15px;
   color: white;
 }
 .cancel {
@@ -154,11 +166,88 @@
   border: none;
   cursor: pointer;
   color: white;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .order:hover {
   background-color: rgb(17, 136, 255);
 }
 .cancel:hover {
   background-color: rgb(155, 4, 24);
+}
+
+@media screen and (max-width: 500px) {
+  .overlay-items {
+    height: 80vh;
+    width: 80vw;
+  }
+  .cartItem-container {
+    width: 70vw;
+    height: 35vh;
+  }
+  .cartItem-list {
+    width: 70vw;
+    height: 30vh;
+  }
+  .items-info {
+    height: 8vh;
+    width: 35vw;
+  }
+  .add-remove {
+    width: 20vw;
+    height: 8vh;
+  }
+  .add-remove button {
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+  }
+  .total-amount {
+    font-size: 14px;
+    width: 70vw;
+    border-bottom: 2px solid black;
+  }
+  .name-price {
+    font-size: 12px;
+  }
+  .amount {
+    font-size: 12px;
+  }
+  .button-box {
+    width: 70vw;
+  }
+  .actions-box {
+    width: 50vw;
+  }
+  .button-container {
+    width: 40vw;
+  }
+  .order {
+    height: 40px;
+    width: 60px;
+    font-size: 12px;
+  }
+  .cancel {
+    height: 40px;
+    width: 60px;
+    font-size: 12px;
+  }
+  .form-checkout {
+    background-color: rgb(236, 236, 236, 0.8);
+    width: 70vw;
+    padding: 0;
+  }
+  .input-container {
+    font: 10px;
+    width: 60vw;
+  }
+  .input-container input {
+    width: 40vw;
+    height: 3vh;
+  }
+  .input-container label {
+    font-size: 12px;
+  }
+  .input-error {
+    font-size: 8px;
+  }
 }
